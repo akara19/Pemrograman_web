@@ -58,34 +58,21 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Input Data Group Barang</h1>
+                            <h1 class="page-header">Data Group Barang</h1>
                         </div>
                     </div>
 
                     <div class="row">
 						<div class="col-lg-12">
 							<div class="panel-body">
-								<form class="form" method="post"
-								action="<?php echo base_url('index.php/Barang_group/Add');?>"> 
-									<div class="form-group">
-										<label> Group Barang </label>
-										<input type="text" 
-											class="form-control" 
-											name="nama" />
-									</div>
-									<div class="form-group" >
-										<input type="submit" 
-										class="form-control btn btn-success"
-										value="Simpan"/>
-									</div>
-									
-									<div class="form-group">
-										<a href="<?php echo base_url('index.php/Barang_group/Select'); ?>" 
-										class="btn btn-warning form-control" >
-										Lihat Data
-										</a>
-									</div>
-								</form>
+								<table>
+									<!-- untuk mengambil data pada controller -->
+									<?php foreach ($data as $_data){ ?>
+										<tr>
+											<td> <?php echo $_data->Nama; ?> </td>
+										</tr>
+									<?php } ?>
+								</table>
 							</div>
 						</div>
 					</div>
