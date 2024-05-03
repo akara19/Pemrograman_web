@@ -76,10 +76,8 @@
 							</div>
 						</div>
 					</div>
-
                 </div>
             </div>
-
         </div>
 
         <!-- jQuery -->

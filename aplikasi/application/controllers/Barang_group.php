@@ -12,6 +12,7 @@ class Barang_group extends CI_Controller {
 		$data = array('Nama'=>$nama);
 		$this->db->insert('barang_group',$data);
 	}
+	
 	public function Select(){
 		$data['data'] = $this->db->get('barang_group')->result();
 		$this->load->view('barang_group/select',$data);
