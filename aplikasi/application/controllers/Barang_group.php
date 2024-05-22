@@ -18,5 +18,14 @@ class Barang_group extends CI_Controller {
 		$this->load->view('barang_group/select',$data);
 		
 	}
+	
+	public function Hapus(){
+		$Id = $this->uri->segment(3);
+		//echo $Id;
+		$this->db->where('Id',$Id);
+		$this->db->delete('Barang_group');
+		echo "<meta http-equiv='refresh' content='0; url=".base_url().
+		"index.php/Barang_group/Select'>";
+	}
 
 }

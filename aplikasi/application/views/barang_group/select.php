@@ -33,6 +33,17 @@
         <!-- Custom Fonts -->
         <link href="<?php echo base_url('assets/css/font-awesome.min.css'); ?>"
         rel="stylesheet" type="text/css">
+		
+		
+		<!-- data tables -->
+		
+        <!-- DataTables CSS -->
+        <link href="<?php echo base_url('assets/css/dataTables/dataTables.bootstrap.css');?>" 
+		rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="<?php echo base_url('assets/css/dataTables/dataTables.responsive.css');?>" 
+		rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,14 +76,32 @@
                     <div class="row">
 						<div class="col-lg-12">
 							<div class="panel-body">
-								<table>
-									<!-- untuk mengambil data pada controller -->
-									<?php foreach ($data as $_data){ ?>
-										<tr>
-											<td> <?php echo $_data->Nama; ?> </td>
-										</tr>
-									<?php } ?>
-								</table>
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered">
+										<thead>
+											<th>No.</th>
+											<th>Nama Group</th>
+											<th>Aksi</th>
+										</thead>
+										<!-- untuk mengambil data pada controller -->
+										<?php 
+											/* membuat nomor urut */
+											$no=0;
+											foreach ($data as $_data){ 
+											$no++;
+										?>
+											<tr>
+												<td> <?php echo $no; ?></td>
+												<td> <?php echo $_data->Nama; ?> </td>
+												<td>
+													<?php 
+														echo anchor('Barang_group/Hapus/'.$_data->Id,'Hapus','');
+													?>
+												</td>
+											</tr>
+										<?php } ?>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -91,6 +120,13 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="<?php echo base_url('assets/js/startmin.js');?>"></script>
+
+		<!-- Data tables -->
+		 <!-- DataTables JavaScript -->
+        <script src="<?php echo base_url('assets/js/dataTables/jquery.dataTables.min.js');?>">
+		</script>
+        <script src="<?php echo base_url('assets/js/dataTables/dataTables.bootstrap.min.js');?>">
+		</script>
 
     </body>
 
