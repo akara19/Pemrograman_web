@@ -11,6 +11,8 @@ class Barang_group extends CI_Controller {
 		$nama = $this->input->post('nama');
 		$data = array('Nama'=>$nama);
 		$this->db->insert('barang_group',$data);
+		echo "<meta http-equiv='refresh' content='0; url=".base_url().
+		"index.php/Barang_group'>";
 	}
 	
 	public function Select(){
